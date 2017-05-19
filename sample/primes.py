@@ -1,8 +1,6 @@
 """ Defines a number of methods for testing
 """
 
-#pylint: disable=C0303
-
 from math import (floor, log, sqrt)
 
 def approx_number_primes(value):

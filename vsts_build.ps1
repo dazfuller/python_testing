@@ -3,3 +3,4 @@ python -m venv .\venv\build
 pip install -r requirements.txt
 coverage run -m unittest discover
 coverage xml
+pylint sample tests
