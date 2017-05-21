@@ -45,6 +45,7 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+TEST-test*.xml
 
 # Translations
 *.mo
@@ -99,3 +100,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Custom output files
+execute_stderr.txt
