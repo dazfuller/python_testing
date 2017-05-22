@@ -32,7 +32,7 @@ class TestPrimeMethods(unittest.TestCase):
         """ Check that the prime evaluator correctly identify non-prime
             numbers as non-prime
         """
-        self.assertFalse(is_prime(3))
+        self.assertFalse(is_prime(4))
         self.assertFalse(is_prime(93))
         self.assertFalse(is_prime(9994))
     
