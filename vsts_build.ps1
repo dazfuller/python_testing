@@ -30,5 +30,17 @@ Write-Output "> Executing unit tests"
 Write-Output "> Generating coverage report"
 & coverage xml -o "$($OutputLocation)\coverage.xml" 2>coverage_stderr.txt
 
+# Check to see if any tests failed, this checks the run output as all standard
+# output is also logged onto stderr and so is unreliable
+
+$TestResults = (Get-ChildItem -Filter "Test-*" -File | Sort-Object -Property CreationTimeUtc -Descending)[0]
+$TestOutput = [xml](Get-Content $TestResults -Raw)
+$TestFailures = [int]($TestOutput.testsuite.failures)
+
+if ($TestFailures -gt 0)
+{
+    Write-Error "$($TestFailures) test(s) failed"
+}
+
 Write-Output "> Executing PyLint"
 pylint sample tests
