@@ -103,3 +103,4 @@ ENV/
 
 # Custom output files
 execute_stderr.txt
+coverage_stderr.txt
