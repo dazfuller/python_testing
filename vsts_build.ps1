@@ -29,6 +29,7 @@ Write-Output "> Executing unit tests"
 
 Write-Output "> Generating coverage report"
 & coverage xml -o "$($OutputLocation)\coverage.xml" 2>coverage_stderr.txt
+& coverage html
 
 # Check to see if any tests failed, this checks the run output as all standard
 # output is also logged onto stderr and so is unreliable
