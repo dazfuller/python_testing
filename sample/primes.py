@@ -13,15 +13,10 @@ def approx_number_primes(value):
     return floor((value / log(value)) * (1 + (1.2762 / log(value))))
 
 def is_prime(value):
-    """ Determines if a given value is a prime number
-
-        Args:
-        value -- The value to evaluate
-    """
     if not isinstance(value, int):
         raise TypeError("value should be of type int")
     
-    if value == 2:
+    if (value == 2):
         return True
     elif value < 2 or value % 2 == 0:
         return False
